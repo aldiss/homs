@@ -12,11 +12,11 @@ class ProductType(models.Model):
 
 
 class Vendor(models.Model):
-    name = models.CharField(max_length=30)
-    description = models.CharField(max_length=500)
+    name = models.CharField(u"Наименование", max_length=30)
+    description = models.CharField(u"Описание", max_length=500)
     producttype = models.ManyToManyField(ProductType, verbose_name=u"Виды продукции")
     email = models.EmailField(blank=True, verbose_name='e-mail')
-    email2 = models.EmailField(blank=True, verbose_name='e-mail')
+    contact = models.CharField(u"Контактное лицо", max_length=50)
 
     def __unicode__(self):
         return self.name
