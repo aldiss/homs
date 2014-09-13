@@ -15,6 +15,9 @@ class Customer(models.Model):
     address = models.CharField(u"Адрес", max_length=500)
     email = models.EmailField(blank=True, verbose_name='e-mail')
 
+    def __unicode__(self):
+        return self.name
+
 class Order(models.Model):
     ordernum = models.CharField(u"Номер заказа", max_length=10)
     # нельзя сделать чисто числовым полем
@@ -25,4 +28,4 @@ class Order(models.Model):
 
 
     def __unicode__(self):
-        return self.name
+        return self.ordernum
