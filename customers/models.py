@@ -23,7 +23,7 @@ class Order(models.Model):
     # нельзя сделать чисто числовым полем
     customer = models.ForeignKey(Customer, verbose_name=u"Покупатель")
     date = models.DateField(u"Дата заказа")
-    amount = models.DecimalField(u"Дата заказа", max_digits=8, decimal_places=2)
+    amount = models.DecimalField(u"Сумма заказа", max_digits=8, decimal_places=2)
 
 
 
