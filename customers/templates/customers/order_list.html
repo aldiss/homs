@@ -1,0 +1,25 @@
+{% load staticfiles %}
+
+
+
+
+<html>
+    <head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/orders.css' %}">
+        <title>Orders</title>
+    </head>
+    <body>
+        {% for order in orders %}
+        <div>
+            <p>Заказано: {{order.date}}
+            <h1><a href="">{{ order.customer }}</a></h1>
+            <p>Сумма заказа: {{ order.amount }}</p>
+            <p>Себестоимость заказа: {{ order.cost }}</p>
+        </div>
+        {% endfor %}
+
+    </body>
+</html>
