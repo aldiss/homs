@@ -1,5 +1,4 @@
 venv
 *.pyc
 staticfiles
-migrations
 local_settings.py
