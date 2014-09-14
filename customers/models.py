@@ -23,7 +23,14 @@ class Order(models.Model):
     # нельзя сделать чисто числовым полем
     customer = models.ForeignKey(Customer, verbose_name=u"Покупатель")
     date = models.DateField(u"Дата заказа")
+    shipdate = models.DateField(u"Дата отгрузки заказа", null=True)
     amount = models.DecimalField(u"Сумма заказа", max_digits=8, decimal_places=2)
+    cost = models.DecimalField(u"Себестоимость", max_digits=8, decimal_places=2, null=True)
+    vendor = models.ForeignKey('vendors.Vendor', verbose_name=u"Поставщик по заказу", null=True)
+    # продумать, как можно реализовать двух поставщиков по одному клиентскому заказу.
+    # видимо, единственный вариант, это плодить отдельный заказ поставщика
+    # и связывать его с Заказом клиента
+    worker = models.ForeignKey('workers.Worker', verbose_name=u"Дизайнер по заказу", null=True)
 
 
 

@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'vendors',
     'customers',
+    'workers',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -112,3 +113,7 @@ try:
     from .local_settings import *
 except ImportError:
     pass
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
