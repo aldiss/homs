@@ -16,7 +16,7 @@ class Vendor(models.Model):
     description = models.CharField(u"Описание", max_length=500)
     producttype = models.ManyToManyField(ProductType, verbose_name=u"Виды продукции")
     email = models.EmailField(blank=True, verbose_name='e-mail')
-    contact = models.CharField(u"Контактное лицо", default = 'contact person' max_length=50)
+    contact = models.CharField(u"Контактное лицо", default = 'contact person', max_length=50)
 
     def __unicode__(self):
         return self.name
